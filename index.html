@@ -118,12 +118,12 @@
         <div id="sankeyPlot" style="width: 100%; height: 800px;"></div>
 
         <div class="instructions">
-            <h3>Instrucciones de uso:</h3>
+            <h3>Como usar el diagrama</h3>
             <ul>
-                <li>Pase el cursor sobre los nodos para ver si es una Dimensión o Palabra Clave</li>
-                <li>Pase el cursor sobre los enlaces para ver las conexiones específicas</li>
-                <li>Los nodos grises representan palabras clave compartidas entre dimensiones</li>
-                <li>Las líneas grises muestran conexiones cruzadas entre dimensiones</li>
+                <li>Pasa el cursor sobre los nodos para ver si es una Tema o una palabra Clave</li>
+                <li>Pasa el cursor sobre los enlaces para ver las conexiones específicas</li>
+                <li>Los nodos grises representan palabras clave compartidas entre temas</li>
+                <li>Las líneas grises muestran conexiones cruzadas entre los temas</li>
             </ul>
         </div>
 
@@ -132,23 +132,23 @@
             
             <div class="keyword-section">
                 <div class="keyword-box ls-box">
-                    <h3>🟢 Liderazgo Sustentable</h3>
+                    <h3>Liderazgo Sustentable</h3>
                     <ul class="keyword-list" id="ls-keywords"></ul>
                 </div>
                 
                 <div class="keyword-box ts-box">
-                    <h3>🔵 Teoría de Sistemas</h3>
+                    <h3>Teoría de Sistemas</h3>
                     <ul class="keyword-list" id="ts-keywords"></ul>
                 </div>
                 
                 <div class="keyword-box me-box">
-                    <h3>🟡 Modelo Ecológico de Bronfenbrenner</h3>
+                    <h3>Modelo Ecológico de Bronfenbrenner</h3>
                     <ul class="keyword-list" id="me-keywords"></ul>
                 </div>
             </div>
 
             <div class="shared-box" style="margin-top: 20px; padding: 20px;">
-                <h3>⚪ Análisis de Conexiones</h3>
+                <h3>Análisis de Conexiones</h3>
                 <div id="shared-analysis"></div>
             </div>
         </div>
@@ -273,7 +273,7 @@
             });
             
             const customData = nodes.map(node => 
-                dimensions.includes(node) ? 'Dimensión' : 'Palabra Clave'
+                dimensions.includes(node) ? 'Tema' : 'Palabra Clave'
             );
             
             const data = [{
@@ -298,12 +298,6 @@
             }];
             
             const layout = {
-                title: {
-                    text: "Diagrama de Sankey MLESS",
-                    x: 0.5,
-                    xanchor: 'center',
-                    font: { size: 18 }
-                },
                 font: { size: 11, family: "Arial" },
                 margin: { l: 50, r: 50, t: 100, b: 50 },
                 paper_bgcolor: 'white',
@@ -350,16 +344,16 @@
             const analysisDiv = document.getElementById('shared-analysis');
             
             let html = `
-                <h4>Compartidas entre las 3 dimensiones (${sharedAll.size}):</h4>
+                <h4>Palabras clave compartidas entre los 3 temas (${sharedAll.size}):</h4>
                 <ul>${Array.from(sharedAll).sort().map(kw => `<li>${kw}</li>`).join('')}</ul>
                 
-                <h4>Solo entre Liderazgo Sustentable y Teoría de Sistemas (${sharedLSTS.size}):</h4>
+                <h4>Palabras clave compartidas entre Liderazgo Sustentable y Teoría de Sistemas (${sharedLSTS.size}):</h4>
                 <ul>${Array.from(sharedLSTS).sort().map(kw => `<li>${kw}</li>`).join('')}</ul>
                 
-                <h4>Solo entre Liderazgo Sustentable y Modelo Ecológico (${sharedLSME.size}):</h4>
+                <h4>Palabras clave compartidas entre Liderazgo Sustentable y Modelo Ecológico (${sharedLSME.size}):</h4>
                 <ul>${Array.from(sharedLSME).sort().map(kw => `<li>${kw}</li>`).join('')}</ul>
                 
-                <h4>Solo entre Teoría de Sistemas y Modelo Ecológico (${sharedTSME.size}):</h4>
+                <h4>Palabras clave compartidas entre Teoría de Sistemas y Modelo Ecológico (${sharedTSME.size}):</h4>
                 <ul>${Array.from(sharedTSME).sort().map(kw => `<li>${kw}</li>`).join('')}</ul>
             `;
             
