@@ -1,80 +1,85 @@
+<!--index.html-->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diagrama de Sankey MLESS</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Sankey MLESS</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <div class="container">
-      <div class="header">
-        <div class="navigation-buttons">
-            <button id="authorsBtn" class="nav-button">Ir a Diagrama de Autores</button>
+    <div class="container">
+        <div class="header">
+            <div class="navigation-buttons">
+                <button id="authorsBtn" class="nav-button">Ir a Diagrama de Autores</button>
+            </div>
+            <h1>Diagrama de Sankey MLESS</h1>
+            <p>Análisis de conexiones entre Liderazgo Sustentable, Teoría de Sistemas y Modelo Ecológico de
+                Bronfenbrenner</p>
         </div>
-          <h1>Diagrama de Sankey MLESS para las palabras clave</h1>
-          <p>Análisis de conexiones entre Liderazgo Sustentable, Teoría de Sistemas y Modelo Ecológico de Bronfenbrenner</p>
-      </div>
 
-      <div class="legend">
-          <div class="legend-item">
-              <div class="legend-color" style="background-color: rgba(76, 175, 80, 0.8);"></div>
-              <span><strong>Liderazgo Sustentable</strong></span>
-          </div>
-          <div class="legend-item">
-              <div class="legend-color" style="background-color: rgba(33, 150, 243, 0.8);"></div>
-              <span><strong>Teoría de Sistemas</strong></span>
-          </div>
-          <div class="legend-item">
-              <div class="legend-color" style="background-color: rgba(255, 193, 7, 0.8);"></div>
-              <span><strong>Modelo Ecológico</strong></span>
-          </div>
-          <div class="legend-item">
-              <div class="legend-color" style="background-color: rgba(158, 158, 158, 0.8);"></div>
-              <span><strong>Palabras Clave Compartidas</strong></span>
-          </div>
-      </div>
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: rgba(76, 175, 80, 0.8);"></div>
+                <span><strong>Liderazgo Sustentable</strong></span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: rgba(33, 150, 243, 0.8);"></div>
+                <span><strong>Teoría de Sistemas</strong></span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: rgba(255, 193, 7, 0.8);"></div>
+                <span><strong>Modelo Ecológico</strong></span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: rgba(158, 158, 158, 0.8);"></div>
+                <span><strong>Palabras Clave Compartidas</strong></span>
+            </div>
+        </div>
 
-      <div id="sankeyPlot" style="width: 100%; height: 800px;"></div>
+        <div id="sankeyPlot" style="width: 100%; height: 800px;"></div>
 
-      <div class="instructions">
-          <h3>Como usar el diagrama</h3>
-          <ul>
-              <li>Pasa el cursor sobre los nodos para ver si es una Tema o una palabra Clave</li>
-              <li>Pasa el cursor sobre los enlaces para ver las conexiones específicas</li>
-              <li>Los nodos grises representan palabras clave compartidas entre temas</li>
-              <li>Las líneas grises muestran conexiones cruzadas entre los temas</li>
-          </ul>
-      </div>
+        <div class="instructions">
+            <h3>Como usar el diagrama</h3>
+            <ul>
+                <li>Pasa el cursor sobre los nodos para ver si es una Tema o una palabra Clave</li>
+                <li>Pasa el cursor sobre los enlaces para ver las conexiones específicas</li>
+                <li>Los nodos grises representan palabras clave compartidas entre temas</li>
+                <li>Las líneas grises muestran conexiones cruzadas entre los temas</li>
+            </ul>
+        </div>
 
-      <div class="analysis-section">
-          <h2>Análisis de Palabras Clave</h2>
-          
-          <div class="keyword-section">
-              <div class="keyword-box ls-box">
-                  <h3>Liderazgo Sustentable</h3>
-                  <ul class="keyword-list" id="ls-keywords"></ul>
-              </div>
-              
-              <div class="keyword-box ts-box">
-                  <h3>Teoría de Sistemas</h3>
-                  <ul class="keyword-list" id="ts-keywords"></ul>
-              </div>
-              
-              <div class="keyword-box me-box">
-                  <h3>Modelo Ecológico de Bronfenbrenner</h3>
-                  <ul class="keyword-list" id="me-keywords"></ul>
-              </div>
-          </div>
+        <div class="analysis-section">
+            <h2>Análisis de Palabras Clave</h2>
 
-          <div class="shared-box" style="margin-top: 20px; padding: 20px;">
-              <h3>Análisis de Conexiones</h3>
-              <div id="shared-analysis"></div>
-          </div>
-      </div>
-  </div>
+            <div class="keyword-section">
+                <div class="keyword-box ls-box">
+                    <h3>Liderazgo Sustentable</h3>
+                    <ul class="keyword-list" id="ls-keywords"></ul>
+                </div>
 
-  <script src="script.js"></script>
+                <div class="keyword-box ts-box">
+                    <h3>Teoría de Sistemas</h3>
+                    <ul class="keyword-list" id="ts-keywords"></ul>
+                </div>
+
+                <div class="keyword-box me-box">
+                    <h3>Modelo Ecológico de Bronfenbrenner</h3>
+                    <ul class="keyword-list" id="me-keywords"></ul>
+                </div>
+            </div>
+
+            <div class="shared-box" style="margin-top: 20px; padding: 20px;">
+                <h3>Análisis de Conexiones</h3>
+                <div id="shared-analysis"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

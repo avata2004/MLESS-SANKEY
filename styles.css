@@ -1,3 +1,5 @@
+/*styles.css*/
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -11,7 +13,7 @@ body {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header {
@@ -35,18 +37,18 @@ body {
   font-size: 16px;
   font-weight: 500;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-button:hover {
   background-color: #0056b3;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .nav-button:active {
   transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .analysis-section {
@@ -70,24 +72,24 @@ body {
   border: 2px solid;
 }
 
-.ls-box { 
-  border-color: #4CAF50; 
-  background-color: rgba(76, 175, 80, 0.1); 
+.ls-box {
+  border-color: #4CAF50;
+  background-color: rgba(76, 175, 80, 0.1);
 }
 
-.ts-box { 
-  border-color: #2196F3; 
-  background-color: rgba(33, 150, 243, 0.1); 
+.ts-box {
+  border-color: #2196F3;
+  background-color: rgba(33, 150, 243, 0.1);
 }
 
-.me-box { 
-  border-color: #FFC107; 
-  background-color: rgba(255, 193, 7, 0.1); 
+.me-box {
+  border-color: #FFC107;
+  background-color: rgba(255, 193, 7, 0.1);
 }
 
-.shared-box { 
-  border-color: #9E9E9E; 
-  background-color: rgba(158, 158, 158, 0.1); 
+.shared-box {
+  border-color: #9E9E9E;
+  background-color: rgba(158, 158, 158, 0.1);
 }
 
 .keyword-list {
@@ -98,7 +100,7 @@ body {
 
 .keyword-list li {
   padding: 4px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .keyword-list li:last-child {

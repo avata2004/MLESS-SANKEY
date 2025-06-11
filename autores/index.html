@@ -1,14 +1,83 @@
+<!--autores/index.html-->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diagrama de Autores - MLESS</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Sankey - Autores MLESS</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    FUTURA PAGINA
-  <script src="script.js"></script>
+    <div class="container">
+        <div class="header">
+            <div class="navigation-buttons">
+                <button id="backBtn" class="nav-button back-btn">← Volver al Diagrama Principal</button>
+            </div>
+            <h1>Diagrama de Sankey - Autores MLESS</h1>
+            <p>Análisis de conexiones entre autores de Liderazgo Sustentable, Teoría de Sistemas y Modelo Ecológico</p>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: rgba(76, 175, 80, 0.8);"></div>
+                <span><strong>Liderazgo Sustentable</strong></span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: rgba(33, 150, 243, 0.8);"></div>
+                <span><strong>Teoría de Sistemas</strong></span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: rgba(255, 193, 7, 0.8);"></div>
+                <span><strong>Modelo Ecológico</strong></span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: rgba(158, 158, 158, 0.8);"></div>
+                <span><strong>Autores compartidos</strong></span>
+            </div>
+        </div>
+
+        <div id="sankeyPlot" style="width: 100%; height: 800px;"></div>
+
+        <div class="instructions">
+            <h3>Como usar el diagrama</h3>
+            <ul>
+                <li>Pasa el cursor sobre los nodos para ver si es un Tema o un Autor</li>
+                <li>Pasa el cursor sobre los enlaces para ver las conexiones específicas</li>
+                <li>Los nodos grises representan autores que publican en ambos temas</li>
+                <li>Las líneas grises muestran colaboraciones cruzadas entre temas</li>
+            </ul>
+        </div>
+
+        <div class="analysis-section">
+            <h2>Análisis de Autores</h2>
+
+            <div class="author-section">
+                <div class="author-box ls-box">
+                    <h3>Autores - Liderazgo Sustentable</h3>
+                    <ul class="author-list" id="ls-authors"></ul>
+                </div>
+
+                <div class="author-box ts-box">
+                    <h3>Autores - Teoría de Sistemas</h3>
+                    <ul class="author-list" id="ts-authors"></ul>
+                </div>
+                <div class="author-box me-box">
+                    <h3>Modelo Ecológico de Bronfenbrenner</h3>
+                    <ul class="author-list" id="me-authors"></ul>
+                </div>
+            </div>
+
+            <div class="shared-box" style="margin-top: 20px; padding: 20px;">
+                <h3>Análisis de Conexiones</h3>
+                <div id="shared-analysis"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
