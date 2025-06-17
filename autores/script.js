@@ -191,23 +191,23 @@ function crearDiagramaAutores() {
 function rellenarListaAutores() {
     // Llenar listas de autores
     const lsList = document.getElementById('ls-authors');
-    autoresLiderazgoSustentable.forEach((kw, i) => {
+    autoresLiderazgoSustentable.forEach((auth, i) => {
         const li = document.createElement('li');
-        li.textContent = `${i + 1}. ${kw}`;
+        li.textContent = `${i + 1}. ${auth}`;
         lsList.appendChild(li);
     });
 
     const tsList = document.getElementById('ts-authors');
-    autoresTeoriaSistemas.forEach((kw, i) => {
+    autoresTeoriaSistemas.forEach((auth, i) => {
         const li = document.createElement('li');
-        li.textContent = `${i + 1}. ${kw}`;
+        li.textContent = `${i + 1}. ${auth}`;
         tsList.appendChild(li);
     });
 
     const meList = document.getElementById('me-authors');
-    autoresTeoriaEcologica.forEach((kw, i) => {
+    autoresTeoriaEcologica.forEach((auth, i) => {
         const li = document.createElement('li');
-        li.textContent = `${i + 1}. ${kw}`;
+        li.textContent = `${i + 1}. ${auth}`;
         meList.appendChild(li);
     });
 }
@@ -226,16 +226,16 @@ function analizarAutoresCompartidos() {
 
     let html = `
       <h4>Autores entre los 3 temas (${todosCompartidos.size}):</h4>
-      <ul>${Array.from(todosCompartidos).sort().map(kw => `<li>${kw}</li>`).join('')}</ul>
+      <ul>${Array.from(todosCompartidos).sort().map(auth => `<li>${auth}</li>`).join('')}</ul>
       
       <h4>Autores entre Liderazgo Sustentable y Teoría de Sistemas (${compartidos_LS_TS.size}):</h4>
-      <ul>${Array.from(compartidos_LS_TS).sort().map(kw => `<li>${kw}</li>`).join('')}</ul>
+      <ul>${Array.from(compartidos_LS_TS).sort().map(auth => `<li>${auth}</li>`).join('')}</ul>
       
       <h4>Autores entre Liderazgo Sustentable y Modelo Ecológico (${compartidos_LS_ME.size}):</h4>
-      <ul>${Array.from(compartidos_LS_ME).sort().map(kw => `<li>${kw}</li>`).join('')}</ul>
+      <ul>${Array.from(compartidos_LS_ME).sort().map(auth => `<li>${auth}</li>`).join('')}</ul>
       
       <h4>Autores entre Teoría de Sistemas y Modelo Ecológico (${compartidos_TS_ME.size}):</h4>
-      <ul>${Array.from(compartidos_TS_ME).sort().map(kw => `<li>${kw}</li>`).join('')}</ul>
+      <ul>${Array.from(compartidos_TS_ME).sort().map(auth => `<li>${auth}</li>`).join('')}</ul>
   `;
 
     analysisDiv.innerHTML = html;
